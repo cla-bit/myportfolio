@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/cla/180.png' %}">
+        <link rel="andriod-chrome" sizes="512x512" href="{% static 'img/cla/512.png' %}">
+        <link rel="andriod-chrome" sizes="192x192" href="{% static 'img/cla/192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/cla/35.png' %}">
+
+        <title> Claver |{% block title %} {% endblock %}</title>
+
+        <!--Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+        <!-- Nucleo Icons -->
+        <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/nucleo-svg.css' %}" rel="stylesheet" />
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+    <body class="page-content">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="{% static 'img/cla/180.png' %}" alt="Claver Portfolio Logo">
+                </a>
+
+                <div>
+                    <h2>{{ title }}</h2>
+                </div>
+            </nav>
+
+        </header>
+
+        {% block body %}
+
+
+        {% endblock %}
+
+        <footer>
+            <p>&copy; 2024 Peter Mbachu</p>
+        </footer>
+
+        <!--   Core JS Files   -->
+        <script src="{% static 'js/core/popper.min.js' %}"></script>
+        <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plugins/perfect-scrollbar.min.js' %}"></script>
+        <script src="{% static 'js/plugins/smooth-scrollbar.min.js' %}"></script>
+        <script src="{% static 'js/core/custom.js' %}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<title>{% block title %} Portfolio {% endblock %}</title>
+
+{% block body %}
+    <main class="scale-in-center">
+        <div class="about-me">
+            <h1 class="my-name">Peter Mbachu &#128516</h1>
+            <h2 class="my-position">FullStack | Python | Software Developer</h2>
+            <p class="short-description">Skilled Backend Python expert (5+ yrs) with a knack for debugging & optimization (80% performance gains!). Passionate about collaboration & efficiency. Seeking senior role to build innovative user-focused applications.</p>
+            <p class="key-skills">🔑 ✅ Python | Django | FastAPI | RestAPI | Redis | Celery | Git | Azure | Docker | AWS | Database | GO</p>
+            <div class="btn">
+                <a href="{% url 'home:project_list' %}" class="btn-link">All projects</a>
+                <div><button type="button" class="button view-btn">View Resume</button></div>
+                <div><button type="button" class="button connect-btn">Let's Connect</button></div>
+            </div>
+            <div class="social-links">
+                <a href="{{ github }}"><i class="github fa fa-github"></i></a>
+                <a href="{{ linkedin }}"><i class="linkedin fa fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="background-image">
+            <img src="{% static 'img/2150709886__1___1_-removebg-preview (1).png' %}" alt="">
+            <div class="zoom-overlay"></div>
+        </div>
+    </main>
+{% endblock %}
