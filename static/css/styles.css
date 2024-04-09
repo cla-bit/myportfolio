@@ -795,6 +795,7 @@ form {
 
 
 /* ============ MEDIA QUERY ==================== */
+
 @media (max-width: 200px) {
     .logo {
         width: 25px;
@@ -880,7 +881,7 @@ form {
     }
 }
 
-@media (min-width: 200px) and (max-width: 300px) {
+@media (min-width: 300px) {
     header {
     }
     .logo {
@@ -969,7 +970,7 @@ form {
     }
 }
 
-@media (min-width: 300px) and (max-width: 400px) {
+@media (min-width: 500px) {
     .logo {
         width: 40px;
         height: 40px;
@@ -1062,7 +1063,7 @@ form {
     }
 }
 
-@media (min-width: 500px) and (max-width: 830px) {
+@media (min-width: 830px) {
 
     .parent {
         width: 100%;
