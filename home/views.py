@@ -1,3 +1,5 @@
+""" Class Based Views """
+
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
@@ -14,6 +16,7 @@ from .utils import send_contact_email
 
 
 class HomeView(TemplateView):
+    """ Home view class """
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
@@ -27,6 +30,7 @@ class HomeView(TemplateView):
 
 
 class ProjectView(ListView):
+    """ List of projects """
     model = Project
     template_name = 'projects.html'
     context_object_name = 'projects'
@@ -43,6 +47,7 @@ class ProjectView(ListView):
 
 
 class ContactView(FormView):
+    """ Form view for creating a contact"""
     template_name = 'contact.html'
     form_class = ContactForm
     success_url = reverse_lazy('home:contact')
