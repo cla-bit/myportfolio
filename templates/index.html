@@ -12,8 +12,8 @@
             <p class="key-skills">🔑 ✅ Python | Django | FastAPI | RestAPI | Redis | Celery | Git | Azure | Docker | AWS | Database | GO</p>
             <div class="btn">
                 <a href="{% url 'home:project_list' %}" class="btn-link">All projects</a>
-                <div><button type="button" class="button view-btn">View Resume</button></div>
-                <div><button type="button" class="button connect-btn">Let's Connect</button></div>
+                <a href="{{ resume.url }}" download="{{ resume.url }}"><button type="button" class="button view-btn">View Resume</button></a>
+                <a href="{% url 'home:contact' %}"><button type="button" class="button connect-btn">Let's Connect</button></a>
             </div>
             <div class="social-links">
                 <a href="{{ github }}"><i class="github fa fa-github"></i></a>

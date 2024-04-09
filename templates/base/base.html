@@ -28,21 +28,9 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body class="page-content">
-        <header>
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="{% static 'img/cla/180.png' %}" alt="Claver Portfolio Logo">
-                </a>
-
-                <div>
-                    <h2>{{ title }}</h2>
-                </div>
-            </nav>
-
-        </header>
+        {% include 'base/header.html' %}
 
         {% block body %}
-
 
         {% endblock %}
 

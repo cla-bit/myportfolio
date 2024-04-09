@@ -1,0 +1,13 @@
+{% load static %}
+        <header>
+            <nav>
+                <a href="{% url 'home:home' %}" class="logo">
+                    <img src="{% static 'img/cla/180.png' %}" alt="Claver Portfolio Logo">
+                </a>
+
+                <div>
+                    <h2>{{ title }}</h2>
+                </div>
+            </nav>
+
+        </header>

@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+<title>{% block title %} Contact {% endblock %}</title>
+
+{% block body %}
+    <section class="contact-box">
+        <form class="swing-in-top-bck" method="POST" role="form">
+            {% if messages %}
+            <div class="alert alert-dismissible {% for message in messages %}{% if message.tags %}{{ message.tags }}{% endif %}{% endfor %}" role="alert">
+                {% for message in messages %}
+                    <span {% if message.tags %} class="{{ message.tags }}" id="{{ message.tags }}" {% endif %}>{{ message }}</span>
+                {% endfor %}
+                <button type="button" class="btn-close text-lg py-3 opacity-1" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" class="">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.name|attr:"class:form-control"|attr:"required"|attr:"placeholder: Enter your Full Name"}}
+            </div>
+            <div class="form-group">
+                {{ form.email|attr:"class:form-control"|attr:"required"|attr:"placeholder: Enter your Email Address" }}
+            </div>
+            <div class="form-group">
+                {{ form.subject|attr:"class:form-control"|attr:"required"|attr:"placeholder: Title of Message" }}
+            </div>
+            <div class="form-group">
+                {{ form.message|attr:"class:form-control"|attr:"required"|attr:"placeholder: Type you message here ..." }}
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit<span></span></button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

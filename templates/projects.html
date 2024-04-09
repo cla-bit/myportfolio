@@ -5,50 +5,45 @@
 
 {% block body %}
 
-        <section class="grid-container">
+        <section>
+            <div class="grid-container">
+                {% for item in projects %}
+                <div class="parent puff-in-center">
+                    <div class="card">
+                        <div class="my-logo">
+                            <span class="circle circle1"></span>
+                            <span class="circle circle2"></span>
+                            <span class="circle circle3"></span>
+                            <span class="circle circle4"></span>
+                            <span class="circle circle5">
+                                <img class="logo-1" src="{{ item.project_img.url }}" alt="paystackease-log">
+                            </span>
 
-            {% for item in projects %}
-            <div class="parent puff-in-center">
-                <div class="card">
-                    <div class="my-logo">
-                        <span class="circle circle1"></span>
-                        <span class="circle circle2"></span>
-                        <span class="circle circle3"></span>
-                        <span class="circle circle4"></span>
-                        <span class="circle circle5">
-                            <img class="logo-1" src="{{ item.project_img.url }}" alt="paystackease-log">
-                        </span>
-
-                    </div>
-                    <div class="glass"></div>
-                    <div class="content">
-                        <span class="title">{{ item.project_name }}</span>
-                        <span class="text">{{ item.project_desc }}</span>
-                    </div>
-                    <div class="bottom">
-                        
-                        <div class="social-buttons-container">
-                            <!-- <button class="social-button .social-button1"></button>
-                            <button class="social-button .social-button2"></button>
-                            <button class="social-button .social-button3"></button> -->
                         </div>
-                        <div class="view-more">
-                            {% if item.docu_url_on %}
-                            <a href="{{ item.docu_url }}" class="view-more-button btn-link">Read Documentation</a>
-                            {% endif %}
-                            {% if item.git_url_on %}
-                            <a href="{{ item.git_url }}" class="view-more-button btn-link">View Source Code</a>
-                            {% endif %}
-                            {% if item.video_url_on %}
-                            <a href="{{ item.video_url }}" class="view-more-button btn-link">See Demo</a>
-                            {% endif %}
+                        <div class="glass"></div>
+                        <div class="content">
+                            <span class="title">{{ item.project_name }}</span>
+                            <span class="text">{{ item.project_desc }}</span>
+                        </div>
+                        <div class="bottom">
+
+                            <div class="view-more">
+                                {% if item.docu_url_on %}
+                                <a href="{{ item.docu_url }}" class="view-more-button btn-link">Read Documentation</a>
+                                {% endif %}
+                                {% if item.git_url_on %}
+                                <a href="{{ item.git_url }}" class="view-more-button btn-link">View Source Code</a>
+                                {% endif %}
+                                {% if item.video_url_on %}
+                                <a href="{{ item.video_url }}" class="view-more-button btn-link">See Demo</a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-
-
+            {% include 'base/pagination.html' %}
         </section>
 
 {% endblock %}
